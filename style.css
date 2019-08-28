@@ -1,0 +1,220 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: PopLight;
+  src: url("./fonts/Poppins-Light.ttf");
+}
+@font-face {
+  font-family: PopRegular;
+  src: url("./fonts/Poppins-Light.ttf");
+}
+
+body {
+  font-family: PopLight;
+}
+
+nav {
+  display: flex;
+  justify-content: flex-end;
+  padding: 20px 100px 20px 20px;
+  font-size: 36px;
+  background-color: rgba(50, 50, 50, 0.1);
+  color: white;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  align-items: center;
+  min-height: 10vh;
+}
+
+.nav-links{
+  display: flex;
+  justify-content: space-around;
+  width: 35%;
+}
+
+.nav-links li {
+  padding: 20px;
+  list-style: none;
+}
+
+.burger {
+  display: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+}
+
+.front-page {
+  color: white;
+  height: 100vh;
+  background: linear-gradient(180deg, #000000 0%, rgba(30, 27, 27, 0.9) 100%);
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.front-page h2 {
+  font-size: 48px;
+  font-weight: normal;
+}
+
+.front-page h3 {
+  font-size: 36px;
+  font-weight: normal;
+}
+
+#about-page {
+  height: 100vh;
+  background: linear-gradient(180deg, rgba(30, 27, 27, 0.9) 0%, #000000 100%);
+  color: white;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+.title {
+  font-weight: normal;
+  font-size: 48px;
+  text-align: center;
+  width: 100%;
+  padding-top: 100px;
+}
+
+.about-text {
+  font-size: 36px;
+  width: 50%;
+  padding: 64px;
+}
+
+.about-skills {
+  text-align: center;
+  width: 50%;
+}
+
+.about-skills h2 {
+  padding: 30px;
+}
+
+.about-skills div {
+  justify-content: center;
+  padding: 20px 0px;
+}
+
+.about-skills svg {
+  padding: 10px;
+  margin: 4px;
+}
+
+#portfolio-page {
+  height: 100vh;
+  background: linear-gradient(
+    180deg,
+    #ffffff 0%,
+    rgba(189, 189, 189, 0.85) 100%
+  );
+  color: #000000;
+  text-align: center;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+#portfolio-page h2 {
+  width: 100%;
+}
+
+.project-one,.project-two{
+  width: 50%;
+  justify-content: center;
+  display: flex;
+}
+
+.placeholder{
+  background: gray;
+  border: solid 10px black; 
+  width: 200px;
+  height: 200px;
+  align-items: center; 
+}
+
+#contact-page{
+  height: 100vh;
+  background: linear-gradient(180deg, rgba(189, 189, 189, 0.85) 0%, black 100%);
+}
+
+footer {
+  background: rgba(0, 0, 0, 0.5);
+  color: #ffffff;
+  text-align: center;
+  justify-content: center;
+  padding: 10px;
+}
+
+
+
+@media screen and (max-width: 1024px){
+  nav {
+    padding: 20px;
+    justify-content: center;
+  }
+  .nav-links{
+    width: 60%;
+  }
+
+}
+
+@media screen and (max-width: 768px){
+  body{
+    overflow-x: hidden;
+  }
+  nav {
+    background-color: rgba(0, 0, 0, 0);
+    justify-content: flex-end;
+    padding: 0;
+  }
+  .nav-links{
+    flex-direction: column;
+    position: absolute;
+    height: 90vh;
+    top: 10vh;
+    align-items: center;
+    width: 100%;
+    right: 0;
+    background-color: black;
+    transform: translateX(100%);
+    transition: transform 0.6s ease-in;
+  }
+  .nav-links li{
+    opacity: 0;
+  }
+  .burger{
+    display: block;
+    padding-right: 20px;
+  }
+}
+
+.nav-active{
+  transform: translateX(0%);
+}
+
+@keyframes navLinkFade{
+  from{
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to{
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
