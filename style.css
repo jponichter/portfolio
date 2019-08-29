@@ -104,6 +104,8 @@ nav {
 
 .about-skills h2 {
   padding: 30px;
+  font-weight: normal;
+  font-size: 30px;
 }
 
 .about-skills div {
@@ -140,12 +142,9 @@ nav {
   display: flex;
 }
 
-.placeholder{
-  background: gray;
-  border: solid 10px black; 
-  width: 200px;
+.project-one img, .project-two img{
+  width: 410px;
   height: 200px;
-  align-items: center; 
 }
 
 #contact-page{
@@ -170,6 +169,9 @@ footer {
   }
   .nav-links{
     width: 60%;
+  }
+  .about-text{
+    font-size: 30px;
   }
 
 }
@@ -202,6 +204,46 @@ footer {
     display: block;
     padding-right: 20px;
   }
+  .front-page h2{
+    font-size: 26px;
+  }
+  .front-page h3{
+    font-size: 20px;
+  }
+  #about-page{
+    flex: 1 auto;
+    height: auto;
+    padding-bottom: 24px;
+  }
+  .title{
+    font-size: 30px;
+    order: 1;
+    padding-bottom: 20px;
+  }
+  .about-text{
+    font-size: 20px;
+    padding: 24px;
+    order: 2;
+    width: 100%;
+  }
+  .about-skills{
+    font-size: 14px;
+    padding: 2px;
+    order: 3;
+    width: 100%;
+  }
+  .about-skills svg{
+    height: 64px;
+    width: 64px;
+  }
+  .about-skills div{
+    padding: 0px;
+  }
+  .about-skills h2{
+    font-size: 24px;
+  }
+
+
 }
 
 .nav-active{
