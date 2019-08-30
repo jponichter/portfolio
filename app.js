@@ -1,38 +1,24 @@
-const navSlide = () => {
-  const burger = document.querySelector(".burger");
-  const nav = document.querySelector(".nav-links");
-  const navLinks = document.querySelectorAll(".nav-links li");
-  
+const express = require('express');
+const bodyParser = require('body-parser');
+const exphbs = require('express-handlebars');
+const path = require('path');
+const nodemailer = require('nodemailer');
 
-  function animateLinks() {
-    const screen = window.matchMedia("(max-width: 768px)");
-    navLinks.forEach((link, index) => {
-        if (link.style.animation && screen.matches) {
-          link.style.animation = "";
-        } else if(screen.matches){
-          link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 +
-            0.7}s`;
-        }
-    });
-  }
+const app = express();
 
-  //Toggle Nav
-  burger.addEventListener("click", () => {
-      nav.classList.toggle("nav-active");
-      animateLinks();
-  });
+//View engine setup
+app.engine('handlebars', exphbs());
+app.set("view engine", 'handlebars');
 
-  //Toggle while clicking on links
-  function linkToggle() {
-    navLinks.forEach((link, index) => {
-      link.addEventListener("click", () => {
-          nav.classList.toggle("nav-active");
+//Static folder
+app.use('/public', express.static(path.join(__dirname, 'public')));
 
-          animateLinks();        
-      });
-    });
-  }
-  linkToggle();
-};
+//Body parser middleware
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.json());
 
-navSlide();
+app.get('/', (req, res) => {
+    res.render('contact');
+});
+
+app.listen(3000, () => {console.log('Server started...')});
